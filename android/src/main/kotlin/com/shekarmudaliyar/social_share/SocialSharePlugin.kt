@@ -117,6 +117,8 @@ class SocialSharePlugin:FlutterPlugin, MethodCallHandler, ActivityAware {
             val image: String? = call.argument("image")
             val intent = Intent()
             intent.action = Intent.ACTION_SEND
+            intent.putExtra("com.facebook.platform.extra.APPLICATION_ID", appId)
+            intent.putExtra("source_application", appId)
 
             if (image!=null) {
                 //check if  image is also provided
